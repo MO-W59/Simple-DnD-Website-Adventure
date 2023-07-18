@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Register</title>
+        <!-- load the style sheet from the static folder -->
+        <link rel="stylesheet" href="../static/style.css">
+        <!-- additional formating for the registration from below -->
+        <style>
+            div {
+              margin-bottom: 5px;
+            }
+            label {
+              display: block;
+              float: left;
+              width: 150px;
+              text-align: right;
+              font-weight: bold;
+              margin-right: 10px;
+            }
+            input.submit {
+              margin-left: 160px;
+            }
+          </style>
+    </head>
+<body>
+<h1>Register</h1>
+
+    <p>
+    Please enter a user name and password which must be atleast 12 characters long
+    and have atleast 1 upper, 1 lower, 1 number and 1 special character.
+    </p>
+
+    <!-- return the request of this page via the post method with the information in the form 
+    user submits information via the Register button -->
+    <form method="post">
+        <div>
+        <label for="username">username</label><input type="text" name="username">
+        </div>
+
+        <div>
+        <label for="password">password</label><input type="password" name="password">
+        </div>
+
+        <div>
+        <input type="submit" class="submit" value="Register">
+        </div>
+
+        <!-- if the page is passed an error display it to the user after the form -->
+        {% if error %}
+        <p class=error><strong>Error:</strong> {{ error }}
+        {% endif %}
+
+    </form>
+   
+        <!-- The "Overview" link will take the user to the index page -->
+        <p>Return to <a href="../">Overview</a>.</p>
+</body>
+</html> 

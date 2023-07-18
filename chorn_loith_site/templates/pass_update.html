@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Password Update</title>
+        <!-- load style sheet from static folder -->
+        <link rel="stylesheet" href="../static/style.css">
+        <!-- further formating for the form below -->
+        <style>
+            div {
+              margin-bottom: 5px;
+            }
+            label {
+              display: block;
+              float: left;
+              width: 150px;
+              text-align: right;
+              font-weight: bold;
+              margin-right: 10px;
+            }
+            input.submit {
+              margin-left: 160px;
+            }
+          </style>
+    </head>
+<body>
+<h1>Password Update</h1>
+    <!-- when the user submits the information, load this page via the post method -->
+    <form method="post">
+      <!-- setup form as below submit is done via a button -->
+        <div>
+        <label for="old password">old password</label><input type="password" name="old_password">
+        </div>
+
+        <div>
+        <label for="password">password</label><input type="password" name="password">
+        </div>
+
+        <div>
+        <label for="reenter password">reenter password</label><input type="password" name="reentered_password">
+        </div>
+
+        <div>
+        <input type="submit" class="submit" value="Update Password">
+        </div>
+
+        <!-- if an error was sent with this page request display the error -->
+        {% if error %}
+        <p class=error><strong>Error:</strong> {{ error }}
+        {% endif %}
+
+    </form>
+        <!-- The "Overview" link will take the user to the index page -->
+        <p>Return to <a href="../">Overview</a>.</p>
+</body>
+</html> 
